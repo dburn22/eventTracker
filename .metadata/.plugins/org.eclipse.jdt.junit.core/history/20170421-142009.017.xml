@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="GarageTest" project="GarageTrackerJPA" tests="2" started="2" failures="0" errors="0" ignored="0">
+  <testsuite name="tests.GarageTest" time="2.03">
+    <testcase name="testingDb" classname="tests.GarageTest" time="1.917"/>
+    <testcase name="test" classname="tests.GarageTest" time="0.113"/>
+  </testsuite>
+</testrun>
