@@ -1,0 +1,15 @@
+package data;
+
+public interface GarageDAO {
+	
+	public List<Garage> index();
+	
+	public Garage show(int id);
+	
+	public Garage create(Garage quiz);
+	
+	public Garage update(int id, Garage quiz);
+	
+	public boolean destroy(int id);	
+
+}

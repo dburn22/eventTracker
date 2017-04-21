@@ -1,0 +1,40 @@
+package data;
+
+import java.util.List;
+
+import entities.Garage;
+
+public class GarageDAOImpl implements GarageDAO {
+
+	@Override
+	public List<Garage> index() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Garage show(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Garage create(Garage garage) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Garage update(int id, Garage garage) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean destroy(int id) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+	
+
+}

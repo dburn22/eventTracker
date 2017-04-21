@@ -1,0 +1,50 @@
+$(document).ready(function() {
+	console.log('loaded')
+	load();
+});
+
+var load = function() {
+	$.ajax({
+		type : "GET",
+		url : "rest/makes",
+		dataType : "json",
+
+	}).done(function(data, status) {
+		console.log("SUCCESS");
+		tableLoad(data);
+		console.log(data);
+	}).fail(function(xhr, status, error) {
+		console.log("FAIL");
+	});
+}
+
+var tableLoad = function(data) {
+	var $tr = $('<tr>');
+	var $table = $('<table>');
+	$table.attr('id', 'tableId');
+	var $thead = $('<thead>');
+	var $th = $('<th>');
+	$th.text('Make');
+	var $th2 = $('<th>');
+	$th2.text("View");
+
+	$tr.append($th, $th2);
+	$thead.append($tr);
+	$tbody = $('<tbody>');
+
+	$table.append($thead, $tbody);
+
+	data.forEach(function(garage) {
+		console.log(garage);
+		var $tr = $('<tr>');
+		var $td = $('<td>');
+		var $td2 = $('<td>');
+		var $td3 = $('<td>');
+		var $td4 = $('<td>');
+		$td.text(garage.make);
+		$td2.text("view");
+
+		$tr.append($td, $td2, $td3, $td4);
+		$tbody.append($tr);
+	});
+}
