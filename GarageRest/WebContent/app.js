@@ -31,8 +31,10 @@ var tableLoad = function(data) {
 	$th3.text("Color");
 	var $th4 = $('<th>');
 	$th4.text("WHP");
+	var $th5 = $('<th>');
+	$th5.text("Action");
 
-	$tr.append($th, $th2, $th3, $th4);
+	$tr.append($th, $th2, $th3, $th4, $th5);
 	$thead.append($tr);
 	$tbody = $('<tbody>');
 
@@ -45,13 +47,63 @@ var tableLoad = function(data) {
 		var $td2 = $('<td>');
 		var $td3 = $('<td>');
 		var $td4 = $('<td>');
+		var $td5 = $('<td>')
 		$td.text(garage.make);
 		$td2.text(garage.model);
 		$td3.text(garage.color);
 		$td4.text(garage.whp);
+		
+		
+		var id = garage.id;
+		
+		var $delbut = $('<button>Delete</button>');
+	    $delbut.attr('id', 'delete');
+	    $delbut.text('Delete');
+	    $delbut.click(function(e){
+	      e.preventDefault();
+	     
+	      $.ajax({
+	              type: "DELETE",
+	              url: 'rest/garage/' + id
+	      })
+	          .done(function(data, status) {
+	            load();
+	            });
+	      })
+	    $td5.append($delbut)
 
-		$tr.append($td, $td2, $td3, $td4);
+		$tr.append($td, $td2, $td3, $td4, $td5);
+		
 		$tbody.append($tr);
 	});
+	console.log("before submit button");
 	$("body").append($table);
+
+$('#butt1').on('click', function(e){
+	console.log("after submit button");
+    e.preventDefault();
+    console.log("submit");
+    var cars = {make: "make", model: "model", color: "color", whp: "whp"};
+    var cars = {
+                  make: $(create.make).val(),
+                  model: $(create.model).val(),
+                  color: $(create.color).val(),
+                  whp: $(create.whp).val(),
+       
+              };
+              console.log(cars);
+              $.ajax({
+                  type: "POST",
+                  url: "rest/garage",
+                  dataType: "json",
+                  contentType: 'application/json',
+                  data: JSON.stringify(cars)
+              }).done(function(data, status){
+                  console.log("SUCCESS");
+                  load();
+              }).fail(function(xhr, status, error){
+                  console.log("FAIL");
+              });
+          })
 }
+

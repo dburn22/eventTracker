@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Garage</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="./app.js"></script>
+    <link rel="stylesheet" type="text/css" href="table.css">
+</head>
+<body>
+<table style="width:100%">
+  <tr>
+    <th>Make</th>
+    <th>Model</th> 
+    <th>Color</th>
+    <th>WHP</th>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td> 
+    <td></td>
+  </tr>
+</table>
+<div id='content'></div>
+  <form name="create">
+    ID<br>
+    <input type="text" name="pokeId"><br>
+    Name<br>
+    <input type="text" name="name">
+    <br>
+    Height<br>
+    <input type="text" name="height">
+    <br>
+    Weight<br>
+    <input type="text" name="weight">
+    <br>
+    Image<br>
+    <input type="text" name="img">
+    <br>
+    Description<br>
+    <input type="text" name="description">
+    <input id= "butt1" type="submit" value="Submit">
+  </form>
+
+</body>
+</html>

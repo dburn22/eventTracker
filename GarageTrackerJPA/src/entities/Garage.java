@@ -65,5 +65,4 @@ public class Garage {
 	public String toString() {
 		return "Garage [id=" + id + ", make=" + make + ", model=" + model + ", color=" + color + ", whp=" + whp + "]";
 	}
-
 }

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Garage</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="./app.js"></script>
+    <link rel="stylesheet" type="text/css" href="table.css">
+</head>
+<body>
+<table style="width:100%">
+  <tr>
+    <!-- <th>Make</th>
+    <th>Model</th> 
+    <th>Color</th>
+    <th>WHP</th> -->
+  </tr>
+  <tr>
+    <td></td>
+    <td></td> 
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td> 
+    <td></td>
+  </tr>
+</table>
+<div id='content'></div>
+  <form name="create">
+    
+    Make<br>
+    <input type="text" name="make"><br>
+    Model<br>
+    <input type="text" name="model">
+    <br>
+    Color<br>
+    <input type="text" name="color">
+    <br>
+    WHP<br>
+    <input type="text" name="whp">
+    <br>
+    <input id= "butt1" type="submit" value="Submit">
+  </form>
+
+</body>
+</html>

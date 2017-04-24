@@ -1,0 +1,11 @@
+127.0.0.1 - - [24/Apr/2017:08:30:25 -0600] "GET / HTTP/1.1" 404 994
+0:0:0:0:0:0:0:1 - - [24/Apr/2017:08:30:28 -0600] "GET /GarageRest/ HTTP/1.1" 200 888
+0:0:0:0:0:0:0:1 - - [24/Apr/2017:08:30:29 -0600] "GET /GarageRest/app.js HTTP/1.1" 200 2617
+0:0:0:0:0:0:0:1 - - [24/Apr/2017:08:30:29 -0600] "GET /GarageRest/table.css HTTP/1.1" 200 2346
+0:0:0:0:0:0:0:1 - - [24/Apr/2017:08:30:39 -0600] "GET /GarageRest/rest/makes HTTP/1.1" 200 85
+0:0:0:0:0:0:0:1 - - [24/Apr/2017:08:31:27 -0600] "POST /GarageRest/rest/garage HTTP/1.1" 200 73
+0:0:0:0:0:0:0:1 - - [24/Apr/2017:08:31:28 -0600] "GET /GarageRest/rest/makes HTTP/1.1" 200 148
+0:0:0:0:0:0:0:1 - - [24/Apr/2017:08:41:12 -0600] "GET /GarageRest/?make=&model=&color=&whp= HTTP/1.1" 200 902
+0:0:0:0:0:0:0:1 - - [24/Apr/2017:08:41:14 -0600] "GET /GarageRest/app.js HTTP/1.1" 200 2617
+0:0:0:0:0:0:0:1 - - [24/Apr/2017:08:41:15 -0600] "GET /GarageRest/table.css HTTP/1.1" 200 2346
+0:0:0:0:0:0:0:1 - - [24/Apr/2017:08:41:21 -0600] "GET /GarageRest/rest/makes HTTP/1.1" 200 148

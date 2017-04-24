@@ -1,11 +1,20 @@
 package controllers;
 
+import java.io.IOException;
 import java.util.List;
 
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.fasterxml.jackson.core.JsonParseException;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 import data.GarageDAO;
 import entities.Garage;
@@ -25,6 +34,61 @@ public class GarageController {
 	@RequestMapping(path = "makes", method = RequestMethod.GET)
 	public List<Garage> index() {
 		return garagedao.index();
+	}
+
+	// Deletes Garage object
+	@RequestMapping(value = "garage/{id}", method = RequestMethod.DELETE)
+	public boolean destroy(@PathVariable int id) {
+		System.out.println("88888888888888888888");
+		return garagedao.destroy(id);
+	}
+
+	// Creates a garage object which is actually a car.
+	@RequestMapping(value = "garage", method = RequestMethod.POST)
+	public Garage create(@RequestBody String jsonGarage, HttpServletResponse res) {
+
+		System.out.println(jsonGarage);
+
+		try {
+			ObjectMapper mapper = new ObjectMapper();
+			Garage mappedAddress = mapper.readValue(jsonGarage, Garage.class);
+			return garagedao.create(mappedAddress);
+		} catch (JsonParseException e) {
+
+			e.printStackTrace();
+		} catch (JsonMappingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	//Update a garage object
+	@RequestMapping(value = "garage/{id}", method = RequestMethod.PUT)
+	public Garage update(@PathVariable int id, 
+			@RequestBody String jsonGarage, HttpServletResponse res) {
+
+		System.out.println("in update ************************" + id);
+		res.setStatus(202);
+		System.out.println(jsonGarage);
+		ObjectMapper mapper = new ObjectMapper();
+		try {
+			Garage mappedAddress = mapper.readValue(jsonGarage, Garage.class);
+			return garagedao.update(id, mappedAddress);
+		} catch (JsonParseException e) {
+
+			e.printStackTrace();
+		} catch (JsonMappingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
 	}
 
 }

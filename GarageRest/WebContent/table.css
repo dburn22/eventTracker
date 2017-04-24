@@ -1,42 +1,4 @@
 
-
-/*
-
-RESPONSTABLE 2.0 by jordyvanraaij
-  Designed mobile first!
-
-If you like this solution, you might also want to check out the 1.0 version:
-  https://gist.github.com/jordyvanraaij/9069194
-
-*/
-
-// Default options for table style
-$table-breakpoint: 480px;
-$table-background-color: #FFF;
-$table-text-color: #024457;
-$table-outer-border: 1px solid #167F92;
-$table-cell-border: 1px solid #D9E4E6;
-
-// Extra options for table style (parse these arguments when including your mixin)
-$table-border-radius: 10px;
-$table-highlight-color: #EAF3F3;
-$table-header-background-color: #167F92;
-$table-header-text-color: #FFF;
-$table-header-border: 1px solid #FFF;
-
-// The Responstable mixin
-
-@mixin responstable(
-  $breakpoint: $table-breakpoint,
-  $background-color: $table-background-color,
-  $text-color: $table-text-color,
-  $outer-border: $table-outer-border,
-  $cell-border: $table-cell-border,
-  $border-radius: none,
-  $highlight-color: none,
-  $header-background-color: $table-background-color,
-  $header-text-color: $table-text-color,
-  $header-border: $table-cell-border) {
   
   .responstable {
     margin: 1em 0;

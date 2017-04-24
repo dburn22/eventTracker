@@ -27,21 +27,25 @@ public class GarageDAOImpl implements GarageDAO {
 	}
 
 	@Override
-	public Garage create(Garage garage) {
-		// TODO Auto-generated method stub
-		return null;
+	public Garage create(Garage make) {
+		em.persist(make);
+		em.flush();
+		return make;
 	}
 
 	@Override
 	public Garage update(int id, Garage garage) {
-		// TODO Auto-generated method stub
-		return null;
+		Garage g = em.find(Garage.class, id);
+		g.setMake(garage.getMake());
+		em.flush();
+		return g;
 	}
 
 	@Override
 	public boolean destroy(int id) {
-		// TODO Auto-generated method stub
-		return false;
+		Garage g = em.find(Garage.class, id);
+		em.remove(g);
+		return !em.contains(g);
 	}
 	
 
